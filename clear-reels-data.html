@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Clear MONITIXE REELS Data</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 { color: #e74c3c; }
+        button {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px 5px;
+        }
+        button:hover { background: #2980b9; }
+        .danger { background: #e74c3c; }
+        .danger:hover { background: #c0392b; }
+        .success { background: #27ae60; }
+        .success:hover { background: #229954; }
+        #output {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 20px;
+            border-radius: 5px;
+            font-family: monospace;
+            margin-top: 20px;
+            white-space: pre-wrap;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧹 MONITIXE REELS Data Cleaner</h1>
+        <p><strong>This tool will help you clear all old REEL data and fix the loading issues.</strong></p>
+        
+        <h3>Step 1: Check Current Data</h3>
+        <button onclick="checkData()">📊 Check What's Stored</button>
+        
+        <h3>Step 2: Clear All REEL Data</h3>
+        <button class="danger" onclick="clearAll()">🗑️ Clear Everything</button>
+        
+        <h3>Step 3: Verify Clean</h3>
+        <button class="success" onclick="verify()">✅ Verify Data is Cleared</button>
+        
+        <div id="output"></div>
+    </div>
+
+    <script>
+        const output = document.getElementById('output');
+        
+        function log(message) {
+            output.textContent += message + '\n';
+            output.scrollTop = output.scrollHeight;
+        }
+        
+        function checkData() {
+            output.textContent = '';
+            log('=== CHECKING CURRENT DATA ===\n');
+            
+            // Check localStorage
+            log('📦 LocalStorage Keys:');
+            const keys = Object.keys(localStorage).filter(k => 
+                k.includes('reel') || k.includes('Reel') || k.includes('REEL')
+            );
+            keys.forEach(key => {
+                const value = localStorage.getItem(key);
+                log(`  - ${key}: ${value ? value.substring(0, 100) + '...' : 'empty'}`);
+            });
+            
+            if (keys.length === 0) {
+                log('  (No REEL keys found in localStorage)');
+            }
+            
+            // Check IndexedDB
+            log('\n💾 IndexedDB Databases:');
+            indexedDB.databases().then(dbs => {
+                const reelDBs = dbs.filter(db => 
+                    db.name.includes('REEL') || db.name.includes('reel')
+                );
+                if (reelDBs.length > 0) {
+                    reelDBs.forEach(db => log(`  - ${db.name} (v${db.version})`));
+                } else {
+                    log('  (No REEL databases found)');
+                }
+            });
+            
+            // Parse reels data
+            const reelsData = localStorage.getItem('reels');
+            if (reelsData) {
+                try {
+                    const reels = JSON.parse(reelsData);
+                    log(`\n📊 Found ${reels.length} REEL(s):`);
+                    reels.forEach((reel, i) => {
+                        log(`  ${i + 1}. ${reel.title || 'Untitled'} (ID: ${reel.id})`);
+                    });
+                } catch (e) {
+                    log('\n⚠️ Error parsing reels data: ' + e.message);
+                }
+            }
+            
+            log('\n✅ Check complete!');
+        }
+        
+        function clearAll() {
+            output.textContent = '';
+            log('=== CLEARING ALL REEL DATA ===\n');
+            
+            // Clear localStorage
+            log('🗑️ Removing localStorage keys...');
+            const keysToRemove = [
+                'reels',
+                'uploadedReels',
+                'allReels',
+                'reel_likes',
+                'reel_comments'
+            ];
+            
+            // Also find any dynamic keys
+            Object.keys(localStorage).forEach(key => {
+                if (key.includes('reel') || key.includes('Reel') || key.includes('REEL')) {
+                    keysToRemove.push(key);
+                }
+            });
+            
+            const uniqueKeys = [...new Set(keysToRemove)];
+            uniqueKeys.forEach(key => {
+                localStorage.removeItem(key);
+                log(`  ✓ Removed: ${key}`);
+            });
+            
+            // Clear IndexedDB
+            log('\n💾 Deleting IndexedDB databases...');
+            const dbsToDelete = [
+                'MONITIXE_REELS',
+                'MONITIXE_REELS_DB',
+                'ReelsDB'
+            ];
+            
+            let deleteCount = 0;
+            dbsToDelete.forEach(dbName => {
+                const request = indexedDB.deleteDatabase(dbName);
+                request.onsuccess = () => {
+                    log(`  ✓ Deleted: ${dbName}`);
+                    deleteCount++;
+                    if (deleteCount === dbsToDelete.length) {
+                        log('\n✅ All data cleared successfully!');
+                        log('\n👉 Now click "Verify Data is Cleared" to confirm.');
+                    }
+                };
+                request.onerror = () => {
+                    log(`  ℹ️ ${dbName} (doesn't exist or already deleted)`);
+                    deleteCount++;
+                };
+            });
+        }
+        
+        function verify() {
+            output.textContent = '';
+            log('=== VERIFYING DATA IS CLEARED ===\n');
+            
+            const reelsData = localStorage.getItem('reels');
+            const uploadedReels = localStorage.getItem('uploadedReels');
+            
+            if (!reelsData && !uploadedReels) {
+                log('✅ SUCCESS! All REEL data has been cleared.\n');
+                log('👉 Next steps:');
+                log('   1. Close this tab');
+                log('   2. Go back to MONITIXE');
+                log('   3. Refresh the page (F5)');
+                log('   4. Upload a new REEL from your computer');
+                log('   5. It should work perfectly now!\n');
+            } else {
+                log('⚠️ WARNING: Some data still remains:\n');
+                if (reelsData) log('  - reels key still exists');
+                if (uploadedReels) log('  - uploadedReels key still exists');
+                log('\n👉 Click "Clear Everything" again.');
+            }
+            
+            indexedDB.databases().then(dbs => {
+                const reelDBs = dbs.filter(db => 
+                    db.name.includes('REEL') || db.name.includes('reel')
+                );
+                if (reelDBs.length > 0) {
+                    log('\n⚠️ Some IndexedDB databases still exist:');
+                    reelDBs.forEach(db => log(`  - ${db.name}`));
+                } else {
+                    log('\n✅ All IndexedDB databases cleared!');
+                }
+            });
+        }
+    </script>
+</body>
+</html>

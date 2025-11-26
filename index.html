@@ -1,0 +1,1228 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MONITIXE – Where Content Meets Creativity. Stream Smart. Create Bold.">
+    <title>MONITIXE – Where Content Meets Creativity</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect fill='%230091FF' rx='6' width='32' height='32'/%3E%3Cpath fill='white' d='M8 8l8 8-8 8V8zm8 0v16l8-8-8-8z'/%3E%3C/svg%3E">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-left">
+            <button class="menu-btn" id="menuToggle">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+            </button>
+            <a href="#" class="logo" data-page="home">
+                <svg class="logo-icon" width="36" height="36" viewBox="0 0 36 36">
+                    <rect fill="#0091FF" rx="8" width="36" height="36"/>
+                    <path fill="white" d="M9 9l9 9-9 9V9zm9 0v18l9-9-9-9z"/>
+                </svg>
+                <span class="logo-text">MONITIXE</span>
+            </a>
+        </div>
+        <div class="header-center">
+            <div class="search-box">
+                <input type="text" placeholder="Search videos..." id="searchInput">
+                <button class="search-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                </button>
+            </div>
+        </div>
+        <div class="header-right">
+            <button class="theme-toggle" id="themeToggle" title="Toggle theme">
+                <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            </button>
+            <button class="icon-btn upload-btn" data-page="upload" title="Upload">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+            </button>
+            <button class="icon-btn notification-btn" title="Notifications">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                <span class="notification-badge">3</span>
+            </button>
+            <div class="user-menu" id="userMenu">
+                <button class="user-avatar" id="userAvatar">
+                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=user" alt="User">
+                </button>
+                <div class="user-dropdown" id="userDropdown">
+                    <div class="dropdown-header user-info">
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=user" alt="User">
+                        <div>
+                            <strong class="user-name">John Creator</strong>
+                            <span class="user-email">@johncreator</span>
+                        </div>
+                    </div>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" data-page="channel"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Your Channel</a>
+                    <a href="#" data-page="dashboard"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg> Creator Dashboard</a>
+                    <a href="#" data-page="admin"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg> Admin Panel</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" id="logoutBtn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Switch Profile</a>
+                </div>
+            </div>
+            <button class="btn btn-primary login-btn" id="loginBtn" data-page="login" style="display:none;">Sign In</button>
+        </div>
+    </header>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <nav class="sidebar-nav">
+            <a href="#" class="nav-item active" data-page="home">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                <span>Home</span>
+            </a>
+            <a href="#" class="nav-item" data-page="explore">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+                <span>Explore</span>
+            </a>
+            <a href="#" class="nav-item" data-page="reels">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="7" y="2" width="10" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18"/></svg>
+                <span>REELS</span>
+            </a>
+            <a href="#" class="nav-item" data-page="subscriptions">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg>
+                <span>Subscriptions</span>
+            </a>
+            <div class="nav-divider"></div>
+            <a href="#" class="nav-item" data-page="studio">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="15" rx="2" ry="2"/><polyline points="17 2 12 7 7 2"/></svg>
+                <span>Studio</span>
+            </a>
+            <div class="nav-divider"></div>
+            <a href="#" class="nav-item" data-page="library">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+                <span>Library</span>
+            </a>
+            <a href="#" class="nav-item" data-page="history">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                <span>History</span>
+            </a>
+            <a href="#" class="nav-item" data-page="playlists">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+                <span>Playlists</span>
+            </a>
+            <div class="nav-divider"></div>
+            <div class="nav-section-title">Subscriptions</div>
+            <a href="#" class="nav-item channel-item">
+                <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=tech" alt="">
+                <span>TechVision</span>
+            </a>
+            <a href="#" class="nav-item channel-item">
+                <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=gaming" alt="">
+                <span>GamePro</span>
+            </a>
+            <a href="#" class="nav-item channel-item">
+                <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=music" alt="">
+                <span>MusicWave</span>
+            </a>
+            <div class="nav-divider"></div>
+            <a href="#" class="nav-item" data-page="about">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                <span>About</span>
+            </a>
+            <a href="#" class="nav-item" data-page="contact">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                <span>Contact</span>
+            </a>
+            <a href="#" class="nav-item" data-page="privacy">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                <span>Privacy & Terms</span>
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content" id="mainContent">
+        <!-- Home Page -->
+        <section class="page" id="page-home">
+            <!-- Hero Section -->
+            <div class="hero">
+                <div class="hero-content">
+                    <h1>MONITIXE</h1>
+                    <p class="hero-tagline">Where Content Meets Creativity</p>
+                    <p class="hero-subtitle">Stream Smart. Create Bold. Your World. Your Videos.</p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary" data-page="explore">Start Exploring</button>
+                        <button class="btn btn-secondary" data-page="upload">Upload Video</button>
+                    </div>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat"><span class="stat-number">10M+</span><span class="stat-label">Videos</span></div>
+                    <div class="stat"><span class="stat-number">5M+</span><span class="stat-label">Creators</span></div>
+                    <div class="stat"><span class="stat-number">1B+</span><span class="stat-label">Views</span></div>
+                </div>
+            </div>
+
+            <!-- Categories -->
+            <div class="categories-bar">
+                <button class="category-chip active">All</button>
+                <button class="category-chip">Education</button>
+                <button class="category-chip">Gaming</button>
+                <button class="category-chip">Music</button>
+                <button class="category-chip">Tech</button>
+                <button class="category-chip">Vlogs</button>
+                <button class="category-chip">REELS</button>
+                <button class="category-chip">Live</button>
+                <button class="category-chip">News</button>
+                <button class="category-chip">Sports</button>
+            </div>
+
+            <!-- Video Grid -->
+            <section class="video-section">
+                <h2>Recommended for You</h2>
+                <div class="video-grid" id="recommendedVideos"></div>
+            </section>
+
+            <section class="video-section">
+                <h2>Trending Now</h2>
+                <div class="video-grid" id="trendingVideos"></div>
+            </section>
+        </section>
+
+        <!-- Explore Page -->
+        <section class="page" id="page-explore">
+            <h1>Explore</h1>
+            <div class="explore-categories">
+                <div class="explore-card" style="--accent: #FF3B30">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+                    <span>Trending</span>
+                </div>
+                <div class="explore-card" style="--accent: #0091FF">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+                    <span>Gaming</span>
+                </div>
+                <div class="explore-card" style="--accent: #34D399">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+                    <span>Music</span>
+                </div>
+                <div class="explore-card" style="--accent: #FBBF24">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                    <span>Education</span>
+                </div>
+                <div class="explore-card" style="--accent: #A855F7">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    <span>Tech</span>
+                </div>
+                <div class="explore-card" style="--accent: #EC4899">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+                    <span>Vlogs</span>
+                </div>
+            </div>
+            <section class="video-section">
+                <h2>Popular This Week</h2>
+                <div class="video-grid" id="exploreVideos"></div>
+            </section>
+        </section>
+
+        <!-- REELS Page -->
+        <section class="page" id="page-reels">
+            <div class="reels-viewer" id="reelsViewer">
+                <!-- Reels will be loaded dynamically here -->
+            </div>
+            <div class="reels-empty" id="reelsEmpty">
+                <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <rect x="7" y="2" width="10" height="20" rx="2"/>
+                    <line x1="12" y1="18" x2="12" y2="18"/>
+                </svg>
+                <h2>No REELS Available</h2>
+                <p>Upload a REEL from the Upload page to see it here!</p>
+            </div>
+            
+            <!-- Navigation Arrows -->
+            <button class="reel-nav-arrow reel-nav-up" id="reelNavUp" style="display: none;" title="Previous Reel (↑)">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="18 15 12 9 6 15"></polyline>
+                </svg>
+            </button>
+            <button class="reel-nav-arrow reel-nav-down" id="reelNavDown" style="display: none;" title="Next Reel (↓)">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+            </button>
+        </section>
+        
+        <!-- Upload REEL Page -->
+        <section class="page" id="page-upload-reel">
+            <div class="upload-reel-container">
+                <h1>Upload REEL</h1>
+                <p class="subtitle">Share your vertical video (9:16 aspect ratio required)</p>
+                
+                <form id="uploadReelForm" class="upload-reel-form">
+                    <!-- Video Upload Section -->
+                    <div class="form-section">
+                        <h3>Video File</h3>
+                        <div class="reel-dropzone" id="reelDropzone">
+                            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="7" y="2" width="10" height="20" rx="2"/>
+                                <line x1="12" y1="18" x2="12" y2="18"/>
+                            </svg>
+                            <p>Drag & drop your vertical video here</p>
+                            <p class="hint">or click to browse (9:16 aspect ratio required)</p>
+                            <input type="file" id="reelVideoInput" accept="video/*" style="display: none;">
+                        </div>
+                        <div id="reelVideoPreview" class="reel-preview" style="display: none;">
+                            <video id="reelPreviewVideo" controls></video>
+                            <div id="reelAspectRatioIndicator" class="aspect-ratio-indicator"></div>
+                            <button type="button" class="btn btn-secondary" id="reelChangeVideo">Change Video</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Title and Description Section -->
+                    <div class="form-section">
+                        <h3>Details</h3>
+                        <div class="form-group">
+                            <label for="reelTitle">Title *</label>
+                            <input type="text" id="reelTitle" placeholder="Give your reel a catchy title" required maxlength="100">
+                        </div>
+                        <div class="form-group">
+                            <label for="reelDescription">Description</label>
+                            <textarea id="reelDescription" rows="4" placeholder="Tell viewers about your reel" maxlength="500"></textarea>
+                        </div>
+                    </div>
+                    
+                    <!-- Tags Section -->
+                    <div class="form-section">
+                        <h3>Tags</h3>
+                        <div class="form-group">
+                            <label for="reelTags">Add tags (must start with #)</label>
+                            <input type="text" id="reelTags" placeholder="#funny #trending #viral" maxlength="200">
+                            <span class="hint">Separate tags with spaces. Each tag must start with #</span>
+                        </div>
+                        <div id="reelTagsDisplay" class="tags-display"></div>
+                    </div>
+                    
+                    <!-- Thumbnail Section -->
+                    <div class="form-section">
+                        <h3>Thumbnail</h3>
+                        <div class="thumbnail-upload-section">
+                            <div class="thumbnail-preview" id="reelThumbnailPreview">
+                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                                    <circle cx="8.5" cy="8.5" r="1.5"/>
+                                    <polyline points="21 15 16 10 5 21"/>
+                                </svg>
+                                <p>No thumbnail selected</p>
+                            </div>
+                            <input type="file" id="reelThumbnailInput" accept="image/*" style="display: none;">
+                            <button type="button" class="btn btn-secondary" id="reelUploadThumbnail">Upload Thumbnail</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Publish Button -->
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary" onclick="navigateToPage('studio')">Cancel</button>
+                        <button type="button" class="btn btn-primary" id="publishReelBtn" disabled>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                <polyline points="17 8 12 3 7 8"/>
+                                <line x1="12" y1="3" x2="12" y2="15"/>
+                            </svg>
+                            Publish REEL
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Video Watch Page -->
+        <section class="page" id="page-watch">
+            <div class="watch-container">
+                <div class="watch-main">
+                    <div class="video-player-wrapper">
+                        <div class="video-player" id="videoPlayer">
+                            <video id="mainVideo" poster="https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=1280">
+                                <source src="https://sample-videos.com/video321/mp4/720/big_buck_bunny_720p_1mb.mp4" type="video/mp4">
+                            </video>
+                            <div class="player-controls">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" id="progressFill"></div>
+                                </div>
+                                <div class="controls-row">
+                                    <div class="controls-left">
+                                        <button class="player-btn" id="playPauseBtn">
+                                            <svg class="play-icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                                            <svg class="pause-icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+                                        </button>
+                                        <button class="player-btn" id="muteBtn">
+                                            <svg class="volume-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                                            <svg class="mute-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+                                        </button>
+                                        <span class="time-display"><span id="currentTime">0:00</span> / <span id="duration">0:00</span></span>
+                                    </div>
+                                    <div class="controls-right">
+                                        <button class="player-btn" id="settingsBtn">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                                        </button>
+                                        <button class="player-btn" id="theaterBtn">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="15" rx="2" ry="2"/><polyline points="17 2 12 7 7 2"/></svg>
+                                        </button>
+                                        <button class="player-btn" id="fullscreenBtn">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h1 class="video-title" id="watchTitle">Building the Future: AI-Powered Development</h1>
+                        <div class="video-meta">
+                            <span id="watchViews">1.2M views</span>
+                            <span>•</span>
+                            <span id="watchDate">2 days ago</span>
+                        </div>
+                        <div class="video-actions">
+                            <div class="action-buttons">
+                                <button class="action-btn" id="likeBtn">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg>
+                                    <span id="likeCount">45K</span>
+                                </button>
+                                <button class="action-btn" id="dislikeBtn">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3zm7-13h2.67A2.31 2.31 0 0 1 22 4v7a2.31 2.31 0 0 1-2.33 2H17"/></svg>
+                                </button>
+                                <button class="action-btn">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+                                    <span>Share</span>
+                                </button>
+                                <button class="action-btn tip-btn">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                                    <span>Tip</span>
+                                </button>
+                                <button class="action-btn">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+                                    <span>Save</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="channel-info-bar">
+                            <div class="channel-left">
+                                <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=techvision" alt="Channel" class="channel-avatar-lg">
+                                <div class="channel-details">
+                                    <h3 id="watchChannel">TechVision</h3>
+                                    <span id="watchSubs">2.5M subscribers</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-subscribe" id="subscribeBtn">Subscribe</button>
+                        </div>
+                        <div class="video-description" id="videoDescription">
+                            <p>Explore the cutting-edge world of AI-powered development tools and techniques that are reshaping how we build software. In this comprehensive guide, we'll dive deep into machine learning, neural networks, and practical applications.</p>
+                            <div class="description-tags">
+                                <span class="tag">#AI</span>
+                                <span class="tag">#Technology</span>
+                                <span class="tag">#Development</span>
+                                <span class="tag">#Future</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comments-section">
+                        <h3><span id="commentCount">1,234</span> Comments</h3>
+                        <div class="comment-input">
+                            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=user" alt="You" id="commentUserAvatar">
+                            <input type="text" id="commentInputField" placeholder="Add a comment..." autocomplete="off">
+                        </div>
+                        <div class="comments-list" id="commentsList"></div>
+                    </div>
+                </div>
+                <aside class="watch-sidebar">
+                    <h3>Up Next</h3>
+                    <div class="suggested-videos" id="suggestedVideos"></div>
+                </aside>
+            </div>
+        </section>
+
+        <!-- Channel Page -->
+        <section class="page" id="page-channel">
+            <div class="channel-banner" style="background: linear-gradient(135deg, #0091FF 0%, #FF3B30 100%)">
+                <div class="banner-overlay"></div>
+            </div>
+            <div class="channel-header">
+                <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=user" alt="Channel" class="channel-avatar-xl">
+                <div class="channel-info">
+                    <h1>John Creator</h1>
+                    <p>@johncreator • 125K subscribers • 87 videos</p>
+                    <p class="channel-bio">Creating content that inspires and educates. Tech enthusiast, lifelong learner.</p>
+                </div>
+                <button class="btn btn-subscribe">Subscribe</button>
+            </div>
+            <div class="channel-tabs">
+                <button class="tab-btn active">Videos</button>
+                <button class="tab-btn">Shorts</button>
+                <button class="tab-btn">Playlists</button>
+                <button class="tab-btn">Community</button>
+                <button class="tab-btn">About</button>
+            </div>
+            <div class="video-grid" id="channelVideos"></div>
+        </section>
+
+        <!-- Upload Page -->
+        <section class="page" id="page-upload">
+            <div class="upload-container">
+                <h1>Upload Video</h1>
+                <div class="upload-dropzone" id="uploadDropzone">
+                    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                    <p>Drag and drop video files to upload</p>
+                    <span>or</span>
+                    <button class="btn btn-primary">Select Files</button>
+                    <input type="file" id="videoFileInput" accept="video/*" hidden>
+                </div>
+                <form class="upload-form" id="uploadForm" style="display:none;">
+                    <div class="upload-preview">
+                        <video id="previewVideo" controls></video>
+                        <div class="aspect-ratio-indicator" id="aspectRatioIndicator"></div>
+                    </div>
+                    <div class="form-group">
+                        <label>Title</label>
+                        <input type="text" id="videoTitle" placeholder="Add a title that describes your video" maxlength="100">
+                    </div>
+                    <div class="form-group">
+                        <label>Description</label>
+                        <textarea id="uploadVideoDescription" placeholder="Tell viewers about your video" rows="4"></textarea>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Type</label>
+                            <select id="videoType">
+                                <option value="video">Regular Video</option>
+                                <option value="reel">REEL</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Category</label>
+                            <select id="videoCategory">
+                                <option>Select category</option>
+                                <option>Education</option>
+                                <option>Gaming</option>
+                                <option>Music</option>
+                                <option>Tech</option>
+                                <option>Vlogs</option>
+                                <option>Entertainment</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Visibility</label>
+                            <select id="videoVisibility">
+                                <option>Public</option>
+                                <option>Unlisted</option>
+                                <option>Private</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Tags</label>
+                        <input type="text" placeholder="Add tags separated by commas">
+                    </div>
+                    <div class="form-group">
+                        <label>Thumbnail</label>
+                        <div class="thumbnail-upload">
+                            <div class="thumb-option">
+                                <img src="https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=320" alt="">
+                            </div>
+                            <div class="thumb-option">
+                                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=320" alt="">
+                            </div>
+                            <div class="thumb-option custom-thumb">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                                <span>Upload</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary" id="saveDraftBtn">Save Draft</button>
+                        <button type="submit" class="btn btn-primary">Publish</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Profile Selector Page -->
+        <section class="page active" id="page-profiles">
+            <div class="auth-container">
+                <div class="profiles-card">
+                    <div class="auth-header">
+                        <svg class="logo-icon" width="48" height="48" viewBox="0 0 36 36">
+                            <rect fill="#0091FF" rx="8" width="36" height="36"/>
+                            <path fill="white" d="M9 9l9 9-9 9V9zm9 0v18l9-9-9-9z"/>
+                        </svg>
+                        <h1>Who's watching?</h1>
+                        <p>Select your profile</p>
+                    </div>
+                    <div class="profiles-grid" id="profilesGrid">
+                        <!-- Profiles will be dynamically loaded here -->
+                    </div>
+                    <div class="profiles-actions">
+                        <button class="btn btn-primary" id="addProfileBtn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="12" y1="5" x2="12" y2="19"></line>
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                            </svg>
+                            Create New Profile
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Studio Page -->
+        <section class="page" id="page-studio">
+            <div class="studio-header">
+                <h1>Your Studio</h1>
+                <p>Manage your uploaded videos and view performance analytics</p>
+            </div>
+            
+            <div class="studio-stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon views-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-value" id="studioTotalViews">0</div>
+                        <div class="stat-label">Total Views</div>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon watch-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-value" id="studioTotalWatchTime">0h</div>
+                        <div class="stat-label">Total Watch Time</div>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon earnings-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-value" id="studioTotalEarnings">$0</div>
+                        <div class="stat-label">Total Earnings</div>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon comments-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                    </div>
+                    <div class="stat-content">
+                        <div class="stat-value" id="studioTotalComments">0</div>
+                        <div class="stat-label">Total Comments</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="studio-videos-section">
+                <div class="section-header">
+                    <h2>Your Videos</h2>
+                    <div class="studio-filter">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="published">Published</button>
+                        <button class="filter-btn" data-filter="draft">Drafts</button>
+                    </div>
+                </div>
+                
+                <div class="studio-videos-list" id="studioVideosList">
+                    <!-- Videos will be loaded here dynamically -->
+                </div>
+            </div>
+
+            <div class="studio-videos-section">
+                <div class="section-header">
+                    <h2>Your REELs</h2>
+                    <button class="btn btn-primary" onclick="navigateToPage('upload')">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                        Upload REEL
+                    </button>
+                </div>
+                
+                <div class="studio-videos-list" id="studioReelsList">
+                    <!-- REELs will be loaded here dynamically -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Login Page -->
+        <section class="page" id="page-login">
+            <div class="auth-container">
+                <div class="auth-card">
+                    <div class="auth-header">
+                        <svg class="logo-icon" width="48" height="48" viewBox="0 0 36 36">
+                            <rect fill="#0091FF" rx="8" width="36" height="36"/>
+                            <path fill="white" d="M9 9l9 9-9 9V9zm9 0v18l9-9-9-9z"/>
+                        </svg>
+                        <h1>Welcome to MONITIXE</h1>
+                        <p>Sign in to continue</p>
+                    </div>
+                    <form class="auth-form" id="loginForm">
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" placeholder="Enter your email" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input type="password" placeholder="Enter your password" required>
+                        </div>
+                        <div class="form-options">
+                            <label class="checkbox-label">
+                                <input type="checkbox"> Remember me
+                            </label>
+                            <a href="#">Forgot password?</a>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">Sign In</button>
+                    </form>
+                    <div class="auth-divider"><span>or continue with</span></div>
+                    <div class="social-auth">
+                        <button class="social-btn google">
+                            <svg width="20" height="20" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+                            Google
+                        </button>
+                        <button class="social-btn apple">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                            Apple
+                        </button>
+                    </div>
+                    <p class="auth-footer">Don't have an account? <a href="#" data-page="signup">Sign up</a></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Signup Page -->
+        <section class="page" id="page-signup">
+            <div class="auth-container">
+                <div class="auth-card">
+                    <div class="auth-header">
+                        <svg class="logo-icon" width="48" height="48" viewBox="0 0 36 36">
+                            <rect fill="#0091FF" rx="8" width="36" height="36"/>
+                            <path fill="white" d="M9 9l9 9-9 9V9zm9 0v18l9-9-9-9z"/>
+                        </svg>
+                        <h1>Join MONITIXE</h1>
+                        <p>Create your account</p>
+                    </div>
+                    <form class="auth-form" id="signupForm" novalidate>
+                        <!-- Personal Information -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>First Name <span class="required">*</span></label>
+                                <input type="text" id="firstName" name="firstName" placeholder="John" required minlength="2">
+                                <span class="form-error"></span>
+                            </div>
+                            <div class="form-group">
+                                <label>Last Name <span class="required">*</span></label>
+                                <input type="text" id="lastName" name="lastName" placeholder="Doe" required minlength="2">
+                                <span class="form-error"></span>
+                            </div>
+                        </div>
+                        
+                        <!-- Username -->
+                        <div class="form-group">
+                            <label>Username <span class="required">*</span></label>
+                            <input type="text" id="username" name="username" placeholder="@johndoe" required minlength="3" maxlength="30" pattern="^[a-zA-Z0-9_]+$">
+                            <span class="form-hint">Only letters, numbers, and underscores. 3-30 characters.</span>
+                            <span class="form-error"></span>
+                        </div>
+                        
+                        <!-- Email -->
+                        <div class="form-group">
+                            <label>Email Address <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                            <span class="form-error"></span>
+                        </div>
+                        
+                        <!-- Phone (Optional) -->
+                        <div class="form-group">
+                            <label>Phone Number <span class="optional">(Optional)</span></label>
+                            <input type="tel" id="phone" name="phone" placeholder="+1 (555) 123-4567" pattern="^[\+]?[(]?[0-9]{1,4}[)]?[-\s\.]?[(]?[0-9]{1,4}[)]?[-\s\.]?[0-9]{1,9}$">
+                            <span class="form-error"></span>
+                        </div>
+                        
+                        <!-- Date of Birth & Gender -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Date of Birth <span class="required">*</span></label>
+                                <input type="date" id="dateOfBirth" name="dateOfBirth" required max="2010-01-01">
+                                <span class="form-error"></span>
+                            </div>
+                            <div class="form-group">
+                                <label>Gender <span class="required">*</span></label>
+                                <select id="gender" name="gender" required>
+                                    <option value="">Select...</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                    <option value="other">Other</option>
+                                    <option value="prefer-not-to-say">Prefer not to say</option>
+                                </select>
+                                <span class="form-error"></span>
+                            </div>
+                        </div>
+                        
+                        <!-- Password -->
+                        <div class="form-group">
+                            <label>Password <span class="required">*</span></label>
+                            <div class="password-input-wrapper">
+                                <input type="password" id="password" name="password" placeholder="Create a strong password" required minlength="8">
+                                <button type="button" class="password-toggle" aria-label="Toggle password visibility">
+                                    <svg class="eye-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                                        <circle cx="12" cy="12" r="3"/>
+                                    </svg>
+                                    <svg class="eye-off-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;">
+                                        <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/>
+                                        <line x1="1" y1="1" x2="23" y2="23"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="password-strength" id="passwordStrength">
+                                <div class="strength-bar">
+                                    <div class="strength-bar-fill"></div>
+                                </div>
+                                <span class="strength-text">Password strength: <span class="strength-value">-</span></span>
+                            </div>
+                            <span class="form-hint">At least 8 characters with uppercase, lowercase, number, and special character.</span>
+                            <span class="form-error"></span>
+                        </div>
+                        
+                        <!-- Confirm Password -->
+                        <div class="form-group">
+                            <label>Confirm Password <span class="required">*</span></label>
+                            <div class="password-input-wrapper">
+                                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Re-enter your password" required>
+                                <button type="button" class="password-toggle" aria-label="Toggle password visibility">
+                                    <svg class="eye-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                                        <circle cx="12" cy="12" r="3"/>
+                                    </svg>
+                                    <svg class="eye-off-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;">
+                                        <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/>
+                                        <line x1="1" y1="1" x2="23" y2="23"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <span class="form-error"></span>
+                        </div>
+                        
+                        <!-- Terms and Conditions -->
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="terms" name="terms" required>
+                                <span>I agree to the <a href="#" data-page="privacy">Terms of Service</a> and <a href="#" data-page="privacy">Privacy Policy</a> <span class="required">*</span></span>
+                            </label>
+                            <span class="form-error"></span>
+                        </div>
+                        
+                        <!-- Marketing Opt-in -->
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="marketing" name="marketing">
+                                <span>I want to receive updates, promotions, and news from MONITIXE</span>
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-full" id="signupSubmitBtn">
+                            <span class="btn-text">Create Account</span>
+                            <span class="btn-loader" style="display:none;">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10" opacity="0.25"/>
+                                    <path d="M12 2a10 10 0 0 1 10 10" stroke-linecap="round">
+                                        <animateTransform attributeName="transform" type="rotate" from="0 12 12" to="360 12 12" dur="1s" repeatCount="indefinite"/>
+                                    </path>
+                                </svg>
+                            </span>
+                        </button>
+                    </form>
+                    <div class="auth-divider"><span>or continue with</span></div>
+                    <div class="social-auth">
+                        <button class="social-btn google">
+                            <svg width="20" height="20" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+                            Google
+                        </button>
+                        <button class="social-btn apple">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                            Apple
+                        </button>
+                    </div>
+                    <p class="auth-footer">Already have an account? <a href="#" data-page="login">Sign in</a></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dashboard Page -->
+        <section class="page" id="page-dashboard">
+            <h1>Creator Dashboard</h1>
+            <div class="dashboard-grid">
+                <div class="dashboard-card earnings">
+                    <div class="card-header">
+                        <h3>Earnings</h3>
+                        <span class="badge success">+12.5%</span>
+                    </div>
+                    <div class="card-value">$4,285.50</div>
+                    <p class="card-subtitle">This month</p>
+                    <div class="mini-chart" id="earningsChart"></div>
+                </div>
+                <div class="dashboard-card views">
+                    <div class="card-header">
+                        <h3>Total Views</h3>
+                        <span class="badge primary">+8.2%</span>
+                    </div>
+                    <div class="card-value">2.4M</div>
+                    <p class="card-subtitle">Last 28 days</p>
+                </div>
+                <div class="dashboard-card subscribers">
+                    <div class="card-header">
+                        <h3>Subscribers</h3>
+                        <span class="badge success">+256</span>
+                    </div>
+                    <div class="card-value">125,432</div>
+                    <p class="card-subtitle">Total subscribers</p>
+                </div>
+                <div class="dashboard-card watch-time">
+                    <div class="card-header">
+                        <h3>Watch Time</h3>
+                    </div>
+                    <div class="card-value">48.5K hrs</div>
+                    <p class="card-subtitle">Last 28 days</p>
+                </div>
+            </div>
+            <div class="dashboard-section">
+                <h2>Recent Videos Performance</h2>
+                <div class="videos-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Video</th>
+                                <th>Views</th>
+                                <th>Likes</th>
+                                <th>Comments</th>
+                                <th>Revenue</th>
+                            </tr>
+                        </thead>
+                        <tbody id="dashboardVideos"></tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="dashboard-row">
+                <div class="dashboard-section half">
+                    <h2>Tips Received</h2>
+                    <div class="tips-list" id="tipsList"></div>
+                </div>
+                <div class="dashboard-section half">
+                    <h2>Premium Subscribers</h2>
+                    <div class="premium-stats">
+                        <div class="stat-item">
+                            <span class="stat-value">1,234</span>
+                            <span class="stat-label">Active Members</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">$2,468</span>
+                            <span class="stat-label">Monthly Revenue</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Admin Page -->
+        <section class="page" id="page-admin">
+            <h1>Admin Dashboard</h1>
+            <div class="admin-tabs">
+                <button class="admin-tab active" data-tab="overview">Overview</button>
+                <button class="admin-tab" data-tab="users">Users</button>
+                <button class="admin-tab" data-tab="content">Content</button>
+                <button class="admin-tab" data-tab="reports">Reports</button>
+            </div>
+            <div class="admin-content">
+                <div class="admin-panel active" id="admin-overview">
+                    <div class="admin-stats">
+                        <div class="admin-stat-card">
+                            <h4>Total Users</h4>
+                            <span class="value">5,234,567</span>
+                        </div>
+                        <div class="admin-stat-card">
+                            <h4>Active Today</h4>
+                            <span class="value">234,567</span>
+                        </div>
+                        <div class="admin-stat-card">
+                            <h4>Videos Uploaded</h4>
+                            <span class="value">10,456,789</span>
+                        </div>
+                        <div class="admin-stat-card">
+                            <h4>Reports Pending</h4>
+                            <span class="value warning">127</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="admin-panel" id="admin-users">
+                    <div class="admin-toolbar">
+                        <input type="text" placeholder="Search users...">
+                        <select><option>All Users</option><option>Creators</option><option>Premium</option><option>Banned</option></select>
+                    </div>
+                    <table class="admin-table">
+                        <thead><tr><th>User</th><th>Email</th><th>Role</th><th>Status</th><th>Actions</th></tr></thead>
+                        <tbody id="adminUsersList"></tbody>
+                    </table>
+                </div>
+                <div class="admin-panel" id="admin-content">
+                    <div class="admin-toolbar">
+                        <input type="text" placeholder="Search videos...">
+                        <select><option>All Content</option><option>Flagged</option><option>Under Review</option></select>
+                    </div>
+                    <table class="admin-table">
+                        <thead><tr><th>Video</th><th>Creator</th><th>Views</th><th>Status</th><th>Actions</th></tr></thead>
+                        <tbody id="adminContentList"></tbody>
+                    </table>
+                </div>
+                <div class="admin-panel" id="admin-reports">
+                    <table class="admin-table">
+                        <thead><tr><th>Report</th><th>Type</th><th>Reporter</th><th>Date</th><th>Actions</th></tr></thead>
+                        <tbody id="adminReportsList"></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Page -->
+        <section class="page" id="page-about">
+            <div class="static-page">
+                <h1>About MONITIXE</h1>
+                <div class="about-hero">
+                    <p class="lead">Powering Creators Since 2024</p>
+                </div>
+                <div class="about-content">
+                    <section>
+                        <h2>Our Mission</h2>
+                        <p>MONITIXE is built on a simple belief: everyone has a story worth sharing. We're creating the next generation video platform where content meets creativity, where creators are empowered, and where communities thrive.</p>
+                    </section>
+                    <section>
+                        <h2>What Makes Us Different</h2>
+                        <div class="features-grid">
+                            <div class="feature">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0091FF" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+                                <h3>Creator First</h3>
+                                <p>Better monetization, more control, real support for creators at every level.</p>
+                            </div>
+                            <div class="feature">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0091FF" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                                <h3>Privacy Focused</h3>
+                                <p>Your data belongs to you. Transparent policies, no hidden tracking.</p>
+                            </div>
+                            <div class="feature">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0091FF" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                                <h3>Lightning Fast</h3>
+                                <p>CDN-optimized streaming for instant playback worldwide.</p>
+                            </div>
+                            <div class="feature">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0091FF" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                                <h3>Community Driven</h3>
+                                <p>Built with creator feedback. Your voice shapes our roadmap.</p>
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <h2>Our Numbers</h2>
+                        <div class="stats-row">
+                            <div class="stat-block"><span>10M+</span><label>Videos</label></div>
+                            <div class="stat-block"><span>5M+</span><label>Creators</label></div>
+                            <div class="stat-block"><span>50M+</span><label>Users</label></div>
+                            <div class="stat-block"><span>1B+</span><label>Views/Month</label></div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Page -->
+        <section class="page" id="page-contact">
+            <div class="static-page">
+                <h1>Contact Us</h1>
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h2>Get in Touch</h2>
+                        <p>Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+                        <div class="contact-methods">
+                            <div class="contact-item">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0091FF" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                                <div><strong>Email</strong><p>support@monitixe.com</p></div>
+                            </div>
+                            <div class="contact-item">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0091FF" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                                <div><strong>Address</strong><p>123 Creator Street<br>San Francisco, CA 94102</p></div>
+                            </div>
+                        </div>
+                    </div>
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input type="text" placeholder="Your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" placeholder="your@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Subject</label>
+                            <select>
+                                <option>General Inquiry</option>
+                                <option>Technical Support</option>
+                                <option>Partnership</option>
+                                <option>Press</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Message</label>
+                            <textarea rows="5" placeholder="How can we help?" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Privacy Page -->
+        <section class="page" id="page-privacy">
+            <div class="static-page legal">
+                <h1>Privacy Policy & Terms of Service</h1>
+                <div class="legal-tabs">
+                    <button class="legal-tab active" data-tab="privacy">Privacy Policy</button>
+                    <button class="legal-tab" data-tab="terms">Terms of Service</button>
+                </div>
+                <div class="legal-content" id="privacy-content">
+                    <p class="updated">Last updated: November 21, 2025</p>
+                    <h2>1. Information We Collect</h2>
+                    <p>We collect information you provide directly, such as account information, content you upload, and communications with us. We also collect usage data automatically.</p>
+                    <h2>2. How We Use Your Information</h2>
+                    <p>We use your information to provide and improve our services, personalize your experience, communicate with you, and ensure platform safety.</p>
+                    <h2>3. Information Sharing</h2>
+                    <p>We don't sell your personal data. We share information only with your consent, for legal compliance, or with service providers who assist our operations.</p>
+                    <h2>4. Your Rights</h2>
+                    <p>You can access, correct, delete, or export your data at any time through your account settings.</p>
+                    <h2>5. Data Security</h2>
+                    <p>We implement industry-standard security measures to protect your information from unauthorized access.</p>
+                </div>
+                <div class="legal-content hidden" id="terms-content">
+                    <p class="updated">Last updated: November 21, 2025</p>
+                    <h2>1. Acceptance of Terms</h2>
+                    <p>By accessing MONITIXE, you agree to these terms. If you disagree, please don't use our services.</p>
+                    <h2>2. User Accounts</h2>
+                    <p>You must be 13+ to create an account. You're responsible for maintaining account security and all activities under your account.</p>
+                    <h2>3. Content Guidelines</h2>
+                    <p>You retain rights to your content but grant us license to host and display it. Content must comply with our community guidelines.</p>
+                    <h2>4. Monetization</h2>
+                    <p>Eligible creators can monetize content through ads, tips, and subscriptions. Revenue sharing terms are detailed in creator agreements.</p>
+                    <h2>5. Termination</h2>
+                    <p>We may suspend or terminate accounts that violate these terms or our community guidelines.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Subscriptions Page -->
+        <section class="page" id="page-subscriptions">
+            <h1>Subscriptions</h1>
+            <div id="subscriptionsContent"></div>
+        </section>
+
+        <!-- History Page -->
+        <section class="page" id="page-history">
+            <h1>Watch History</h1>
+            <div class="history-controls">
+                <button class="btn btn-secondary">Clear All History</button>
+            </div>
+            <div class="video-grid" id="historyVideos"></div>
+        </section>
+
+        <!-- Library Page -->
+        <section class="page" id="page-library">
+            <h1>Your Library</h1>
+            <div class="library-sections">
+                <section>
+                    <h2>Watch Later</h2>
+                    <div class="video-grid small" id="watchLaterVideos"></div>
+                </section>
+                <section>
+                    <h2>Liked Videos</h2>
+                    <div class="video-grid small" id="likedVideos"></div>
+                </section>
+            </div>
+        </section>
+
+        <!-- Playlists Page -->
+        <section class="page" id="page-playlists">
+            <h1>Your Playlists</h1>
+            <button class="btn btn-primary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg> Create Playlist</button>
+            <div class="playlists-grid" id="playlistsGrid"></div>
+        </section>
+    </main>
+
+    <!-- Mobile Bottom Nav -->
+    <nav class="mobile-nav">
+        <a href="#" class="mobile-nav-item active" data-page="home">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+            <span>Home</span>
+        </a>
+        <a href="#" class="mobile-nav-item" data-page="explore">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+            <span>Explore</span>
+        </a>
+        <a href="#" class="mobile-nav-item" data-page="shorts">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="7" y="2" width="10" height="20" rx="2"/></svg>
+            <span>Shorts</span>
+        </a>
+        <a href="#" class="mobile-nav-item" data-page="subscriptions">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg>
+            <span>Subs</span>
+        </a>
+        <a href="#" class="mobile-nav-item" data-page="library">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+            <span>Library</span>
+        </a>
+    </nav>
+
+    <!-- Notifications Panel -->
+    <div class="notifications-panel" id="notificationsPanel">
+        <div class="panel-header">
+            <h3>Notifications</h3>
+            <button class="close-panel">&times;</button>
+        </div>
+        <div class="notifications-list" id="notificationsList"></div>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div class="confirmation-modal" id="confirmationModal">
+        <div class="confirmation-overlay"></div>
+        <div class="confirmation-dialog">
+            <div class="confirmation-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                    <line x1="12" y1="9" x2="12" y2="13"/>
+                    <line x1="12" y1="17" x2="12.01" y2="17"/>
+                </svg>
+            </div>
+            <h3 class="confirmation-title" id="confirmationTitle">Confirm Deletion</h3>
+            <p class="confirmation-message" id="confirmationMessage">Are you sure you want to delete this item?</p>
+            <div class="confirmation-item-name" id="confirmationItemName"></div>
+            <p class="confirmation-warning">This action cannot be undone.</p>
+            <div class="confirmation-actions">
+                <button class="btn btn-secondary" id="confirmationCancelBtn">Cancel</button>
+                <button class="btn btn-danger" id="confirmationConfirmBtn">Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- API Client -->
+    <script src="api-client.js"></script>
+    <!-- Main App -->
+    <script src="app.js"></script>
+</body>
+</html>
